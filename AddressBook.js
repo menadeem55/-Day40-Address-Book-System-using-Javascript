@@ -161,16 +161,23 @@ function deleteContact(...params){
     // delete addressBook[index];
     addressBook.splice(index,1);
 }
+function getNoOfContacts(array){
+    let count = array.reduce((totalCount,e)=>totalCount+1,0);
+    return count;
+}
 
 addContact("Nadeem","Akhtar","gandi nagar","chapra","bihar",841301,8745124785,"me.nadeem55@gmail.com@gmail.com");
-addContact("Rahul","Kumar","New colony","delhi","new delhi",478456,5469851254,"rohit@outlook.com");
-addContact("Amit","Kumar","old road","pune","Maharashtra",845754,6587458952,"amit.kr@gmail.com");
-addContact("sameer","Kumar","Central City","patna","bihar",784578,7894562235,"sameer.ps@yahoo.com");
+addContact("Rahul","kumar","New colony","delhi","new delhi",478456,5469851254,"rohit@outlook.com");
+addContact("Amit","kumar","old road","pune","Maharashtra",845754,6587458952,"amit.kr@gmail.com");
+addContact("sameer","kumar","Central City","patna","bihar",784578,7894562235,"sameer.ps@yahoo.com");
 addContact("kunal","pandey","North Zone","punji","goa",841201,5478456214,"kunal.rr@gmail.com");
 console.log(addressBook.toString())
 
 console.log(addressBook.length);
 
-deleteContact("Rahul","Kumar");
+deleteContact("kunal","pandey");
 console.log(addressBook.toString());
 console.log(addressBook.length);
+
+let noOfContacts = getNoOfContacts(addressBook);
+console.log("Total no of contacts : "+noOfContacts);
