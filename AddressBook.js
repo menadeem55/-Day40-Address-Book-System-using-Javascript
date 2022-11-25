@@ -173,11 +173,13 @@ addContact("sameer","kumar","Central City","patna","bihar",784578,7894562235,"sa
 addContact("kunal","pandey","North Zone","punji","goa",841201,5478456214,"kunal.rr@gmail.com");
 console.log(addressBook.toString())
 
-console.log(addressBook.length);
-
 deleteContact("kunal","pandey");
 console.log(addressBook.toString());
-console.log(addressBook.length);
 
 let noOfContacts = getNoOfContacts(addressBook);
+console.log("Total no of contacts : "+noOfContacts);
+
+addContact("Aasif","Sayeed","new colony","patna","bihar",800001,874541254,"aasif.s@gmail.com");
+
+noOfContacts = getNoOfContacts(addressBook);
 console.log("Total no of contacts : "+noOfContacts);
