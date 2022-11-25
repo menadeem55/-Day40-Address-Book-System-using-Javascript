@@ -142,10 +142,35 @@ function addContact(...params) {
     }
     
 }
+function editContact(...params){
+    firstname = params[0];
+    lastname = params[1]; 
+    let index = addressBook.findIndex(x=>x.firstName == firstname && x.lastName == lastname);
+    let newContact;
+    try{
+    newContact = new Contact(params[0],params[1],params[2],params[3],params[4],params[5],params[6],params[7]);
+    }catch(e){
+        console.error(e);
+    }
+    addressBook[index] = newContact;
+}
+function deleteContact(...params){
+    firstname = params[0];
+    lastname = params[1]; 
+    let index = addressBook.findIndex(x=>x.firstName == firstname && x.lastName == lastname);
+    // delete addressBook[index];
+    addressBook.splice(index,1);
+}
 
 addContact("Nadeem","Akhtar","gandi nagar","chapra","bihar",841301,8745124785,"me.nadeem55@gmail.com@gmail.com");
-addContact("Rahul","kumar","New colony","delhi","new delhi",478456,5469851254,"rohit@outlook.com");
-addContact("Amit","kumar","old road","pune","Maharashtra",845754,6587458952,"amit.kr@gmail.com");
-addContact("sameer","kumar","Central City","patna","bihar",784578,7894562235,"sameer.ps@yahoo.com");
+addContact("Rahul","Kumar","New colony","delhi","new delhi",478456,5469851254,"rohit@outlook.com");
+addContact("Amit","Kumar","old road","pune","Maharashtra",845754,6587458952,"amit.kr@gmail.com");
+addContact("sameer","Kumar","Central City","patna","bihar",784578,7894562235,"sameer.ps@yahoo.com");
 addContact("kunal","pandey","North Zone","punji","goa",841201,5478456214,"kunal.rr@gmail.com");
 console.log(addressBook.toString())
+
+console.log(addressBook.length);
+
+deleteContact("Rahul","Kumar");
+console.log(addressBook.toString());
+console.log(addressBook.length);
