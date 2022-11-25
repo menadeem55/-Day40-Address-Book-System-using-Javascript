@@ -131,11 +131,21 @@ class Contact{
     }
 
 }
+let addressBook = new Array();
 
-try{
-    let contact = new Contact("Nadeem","Akhtar","nehru nagar","chapra","Bihar",841301,8457123647,"me.nadeem55@gmail.com");
-console.log(contact.toString());
-}catch(e)
-{
-    console.error(e);
+function addContact(...params) {
+    try{
+    let newContact = new Contact(params[0],params[1],params[2],params[3],params[4],params[5],params[6],params[7]);
+    addressBook.push(newContact);
+    }catch(e){
+        console.error(e);
+    }
+    
 }
+
+addContact("Nadeem","Akhtar","gandi nagar","chapra","bihar",841301,8745124785,"me.nadeem55@gmail.com@gmail.com");
+addContact("Rahul","kumar","New colony","delhi","new delhi",478456,5469851254,"rohit@outlook.com");
+addContact("Amit","kumar","old road","pune","Maharashtra",845754,6587458952,"amit.kr@gmail.com");
+addContact("sameer","kumar","Central City","patna","bihar",784578,7894562235,"sameer.ps@yahoo.com");
+addContact("kunal","pandey","North Zone","punji","goa",841201,5478456214,"kunal.rr@gmail.com");
+console.log(addressBook.toString())
